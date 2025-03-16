@@ -6,6 +6,8 @@ from app.tool import Terminate, ToolCollection
 from app.tool.browser_use_tool import BrowserUseTool
 from app.tool.file_saver import FileSaver
 from app.tool.google_search import GoogleSearch
+from app.tool.baidu_search_search import BaiduSearch
+from app.tool.bing_search import BingSearch
 from app.tool.python_execute import PythonExecute
 
 
@@ -33,5 +35,7 @@ class Manus(ToolCallAgent):
     available_tools: ToolCollection = Field(
         default_factory=lambda: ToolCollection(
             PythonExecute(), GoogleSearch(), BrowserUseTool(), FileSaver(), Terminate()
+            #PythonExecute(), BaiduSearch(), BrowserUseTool(), FileSaver(), Terminate()
+            #PythonExecute(), BingSearch(), BrowserUseTool(), FileSaver(), Terminate()
         )
     )
